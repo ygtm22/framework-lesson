@@ -1,19 +1,9 @@
-package com.example.demo.entity;
+package com.example.demo.form;
 
-public class Product {
+public class ProductForm {
 	private Integer productId;
 	private String productName;
 	private Integer price;
-	
-	public Product() {
-		
-	}
-	
-	public Product(Integer productId, String productName, Integer price) {
-		this.productId = productId;
-		this.productName = productName;
-		this.price = price;
-	}
 
 	public Integer getProductId() {
 		return productId;
