@@ -1,6 +1,6 @@
-package com.example.demo.entity;
+package com.example.demo.controller.form;
 
-public class Product {
+public class IndexForm {
 	private Integer productId;
 	private String productName;
 	private Integer price;
@@ -14,16 +14,6 @@ public class Product {
 		this.name = name;
 	}
 
-	public Product() {
-		
-	}
-	
-	public Product(Integer productId, String productName, Integer price) {
-		this.productId = productId;
-		this.productName = productName;
-		this.price = price;
-	}
-	
 	public Integer getProductId() {
 		return productId;
 	}
