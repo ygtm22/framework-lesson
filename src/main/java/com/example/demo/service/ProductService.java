@@ -6,4 +6,6 @@ import com.example.demo.entity.Product;
 
 public interface ProductService {
 	public List<Product> findAll();
+	
+	public List<Product> findByNameAndPrice(String productName, Integer price);
 }
