@@ -1,19 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Spring Web MVC Test</title>
+<title>SerchResult</title>
 </head>
 <body>
-	<p>結果画面</p>
-  	<p>${fn:escapeXml(msg)}さんが下記の商品を選択しました</p>
-    <p>商品：${fn:escapeXml(product.productName)}</p>
-  	<p>金額：${fn:escapeXml(product.price)}</p>
-	<a href="index">戻る</a>
+	<h1>検索結果</h1>
+	
+	<table border = 1>
+		<tr>
+      		<th>product_id</th>
+      		<th>product_name</th>
+     		<th>price</th>
+    	</tr>
+    	<c:forEach items="${list}" var="product">
+      		<tr>
+        		<td>${fn:escapeXml(product.productId)}</td>
+        		<td>${fn:escapeXml(product.productName)}</td>
+        		<td>${fn:escapeXml(product.price)}</td>
+      		</tr>
+    	</c:forEach>
+	</table>
+  
+  <a href="top">戻る</a>
+  
 </body>
 </html>

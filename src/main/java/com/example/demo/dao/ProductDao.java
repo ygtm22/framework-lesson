@@ -5,5 +5,7 @@ import java.util.List;
 import com.example.demo.entity.Product;
 
 public interface ProductDao {
-	public Product findById(Integer productId);
+	public List<Product> findAll();
+	
+	public List<Product> findByNameAndPrice(String productName, Integer price);
 }

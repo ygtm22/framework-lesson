@@ -7,16 +7,20 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ProductDao;
 import com.example.demo.entity.Product;
-import com.example.demo.service.ProductSevice;
+import com.example.demo.service.ProductService;
 
 @Service
-public class ProductServiceImpl implements ProductSevice{
-	
+public class ProductServiceImpl implements ProductService {
 	@Autowired
-    private ProductDao productDao;
-
-    @Override
-    public Product findById(Integer productId) {
-        return productDao.findById(productId);
-    }
+	private ProductDao productDao;
+	
+	 @Override
+	 public List<Product> findAll() {
+	     return productDao.findAll();
+	 }
+	 
+	 @Override
+	 public List<Product> findByNameAndPrice(String productName, Integer price){
+	     return productDao.findByNameAndPrice(productName, price);
+	 }
 }
